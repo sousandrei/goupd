@@ -99,10 +99,10 @@ func removeOldGo() error {
 func unpackNewGo(fileName string) error {
 	fmt.Println("Unpacking new go version")
 
-	args := []string{"-C", "/usr/local", "-xzf", fileName}
+	args := []string{"-C", "/usr/local", "-xzf", "/tmp/" + fileName}
 	cmd := exec.Command("tar", args...)
 	if err := cmd.Run(); err != nil {
-		return fmt.Errorf("failed to remove old go version: %w", err)
+		return fmt.Errorf("failed to unpack new go version: %w", err)
 	}
 
 	return nil

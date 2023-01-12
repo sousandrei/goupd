@@ -55,7 +55,7 @@ func getLink() (string, error) {
 		return "", fmt.Errorf("failed to parse html: %w", err)
 	}
 
-	div := doc.Find("body > main > article > a:nth-child(10)").First()
+	div := doc.Find("body > main > article > div.downloadWrapper > a:nth-child(4)").First()
 	return div.Get(0).Attr[1].Val, nil
 }
 
